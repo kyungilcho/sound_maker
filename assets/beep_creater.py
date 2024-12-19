@@ -44,8 +44,6 @@ sf.write('pulse_1.wav', pulse_1_wave, SAMPLE_RATE)
 pulse_2_wave = generate_pulse_wave(frequency=329.63, duty_cycle=0.75, duration=DURATION, sample_rate=SAMPLE_RATE)
 sf.write('pulse_2.wav', pulse_2_wave, SAMPLE_RATE)
 
-sd.play(pulse_2_wave)
-
 # 3. Generate Triangle Wave (G3 Note)
 triangle_wave = generate_triangle_wave(frequency=196.00, duration=DURATION, sample_rate=SAMPLE_RATE)
 sf.write('triangle.wav', triangle_wave, SAMPLE_RATE)
@@ -59,7 +57,6 @@ sample_data = np.random.randint(-127, 127, int(SAMPLE_RATE * DURATION))  # Rando
 dmc_wave = generate_dmc_sample(sample_data, sample_rate=SAMPLE_RATE)
 sf.write('dmc_sample.wav', dmc_wave, SAMPLE_RATE)
 
-print("4 NES-style audio assets and 1 DMC-like sample have been created!")
 
 
 
